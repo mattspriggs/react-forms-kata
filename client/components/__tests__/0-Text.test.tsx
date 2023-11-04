@@ -49,7 +49,7 @@ describe('<TextForm />', () => {
     expect(listItems).toEqual(['Do the dishes'])
   })
 
-  it.skip('should let the user use the {Enter} key to submit', async () => {
+  it('should let the user use the {Enter} key to submit', async () => {
     const { user } = renderRoute('/0')
 
     const input = screen.getByLabelText(/new item/i)
@@ -66,7 +66,7 @@ describe('<TextForm />', () => {
     expect(listItems).toEqual(['Do the dishes'])
   })
 
-  it.skip('should clear the input field automatically when the user submits an item', async () => {
+  it('should clear the input field automatically when the user submits an item', async () => {
     const { user } = renderRoute('/0')
 
     const input = screen.getByLabelText(/new item/i)
@@ -78,7 +78,7 @@ describe('<TextForm />', () => {
     expect(screen.getByLabelText(/new item/i)).toHaveValue('')
   })
 
-  it.skip('should let the user submit multiple items one after each other', async () => {
+  it('should let the user submit multiple items one after each other', async () => {
     const { user } = renderRoute('/0')
 
     const input = screen.getByLabelText(/new item/i)
