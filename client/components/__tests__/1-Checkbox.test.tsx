@@ -4,7 +4,7 @@ import { screen, within } from '@testing-library/react'
 import { renderRoute } from '../../test/utils.tsx'
 
 describe('<CheckboxForm />', () => {
-  it.skip('should allow user to check a checkbox', async () => {
+  it('should allow user to check a checkbox', async () => {
     const { user } = renderRoute('/1')
 
     const checkbox = screen.getByLabelText(/is checked/i)
@@ -12,7 +12,7 @@ describe('<CheckboxForm />', () => {
     expect(checkbox).toBeChecked()
   })
 
-  it.skip('should allow user to check/uncheck a checkbox', async () => {
+  it('should allow user to check/uncheck a checkbox', async () => {
     const { user } = renderRoute('/1')
 
     const checkbox = screen.getByLabelText(/is checked/i)
@@ -23,7 +23,7 @@ describe('<CheckboxForm />', () => {
     expect(checkbox).not.toBeChecked()
   })
 
-  it.skip('should allow user to add a checked value to the list', async () => {
+  it('should allow user to add a checked value to the list', async () => {
     const { user } = renderRoute('/1')
 
     const checkbox = screen.getByLabelText(/is checked/i)
@@ -41,7 +41,7 @@ describe('<CheckboxForm />', () => {
     expect(listItems).toEqual(['true'])
   })
 
-  it.skip('should allow user to add an unchecked value to the list', async () => {
+  it('should allow user to add an unchecked value to the list', async () => {
     const { user } = renderRoute('/1')
 
     const submitButton = screen.getByRole('button', { name: /submit/i })
