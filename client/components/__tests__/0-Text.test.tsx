@@ -4,7 +4,7 @@ import { screen, within } from '@testing-library/react'
 import { renderRoute } from '../../test/utils.tsx'
 
 describe('<TextForm />', () => {
-  it.skip('should allow user to type text into input', async () => {
+  it('should allow user to type text into input', async () => {
     const { user } = renderRoute('/0')
 
     const input = screen.getByLabelText(/new item/i)
@@ -15,7 +15,7 @@ describe('<TextForm />', () => {
     expect(screen.getByLabelText(/new item/i)).toHaveValue('Hello')
   })
 
-  it.skip('should not make an HTTP request on submission', async () => {
+  it('should not make an HTTP request on submission', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
     const { user } = renderRoute('/0')
 
@@ -30,7 +30,7 @@ describe('<TextForm />', () => {
     expect(console.error).not.toHaveBeenCalled()
   })
 
-  it.skip('should allow user to add a single item to rendered list', async () => {
+  it('should allow user to add a single item to rendered list', async () => {
     const { user } = renderRoute('/0')
 
     const input = screen.getByLabelText(/new item/i)
