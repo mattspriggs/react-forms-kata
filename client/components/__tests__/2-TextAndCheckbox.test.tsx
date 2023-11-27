@@ -4,7 +4,7 @@ import { screen, within } from '@testing-library/react'
 import { renderRoute } from '../../test/utils.tsx'
 
 describe('<TextAndCheckboxForm />', () => {
-  it.skip('should allow user to fill in all inputs', async () => {
+  it('should allow user to fill in all inputs', async () => {
     const { user } = renderRoute('/2')
 
     const nameInput = screen.getByRole('textbox', { name: /name/i })
@@ -23,7 +23,7 @@ describe('<TextAndCheckboxForm />', () => {
     expect(checkbox).toBeChecked()
   })
 
-  it.skip('should allow user to submit all inputs', async () => {
+  it('should allow user to submit all inputs', async () => {
     const { user } = renderRoute('/2')
 
     const nameInput = screen.getByRole('textbox', { name: /name/i })
@@ -49,7 +49,7 @@ describe('<TextAndCheckboxForm />', () => {
     expect(listItems).toEqual(['Avery - Coding - Student'])
   })
 
-  it.skip('should allow user to submit as not a student', async () => {
+  it('should allow user to submit as not a student', async () => {
     const { user } = renderRoute('/2')
 
     const nameInput = screen.getByRole('textbox', { name: /name/i })
@@ -72,7 +72,7 @@ describe('<TextAndCheckboxForm />', () => {
     expect(updatedListItems).toEqual(['Avery - Coding - Not a student'])
   })
 
-  it.skip('should clear all inputs after submit', async () => {
+  it('should clear all inputs after submit', async () => {
     const { user } = renderRoute('/2')
 
     const nameInput = screen.getByRole('textbox', { name: /name/i })

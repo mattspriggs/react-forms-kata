@@ -4,7 +4,7 @@ import { screen, within } from '@testing-library/react'
 import { renderRoute } from '../../test/utils.tsx'
 
 describe('<SelectForm />', () => {
-  it.skip('should be empty by default', () => {
+  it('should be empty by default', () => {
     renderRoute('/3')
 
     const select = screen.getByRole('combobox', { name: /select/i })
@@ -14,7 +14,7 @@ describe('<SelectForm />', () => {
     expect(text).toHaveTextContent('Selected car:')
   })
 
-  it.skip('should allow user to select an option', async () => {
+  it('should allow user to select an option', async () => {
     const { user } = renderRoute('/3')
 
     const select = screen.getByRole('combobox', { name: /select/i })
@@ -29,7 +29,7 @@ describe('<SelectForm />', () => {
     expect(text).toHaveTextContent('Selected car: mercedes')
   })
 
-  it.skip('should allow user to deselect an option', async () => {
+  it('should allow user to deselect an option', async () => {
     const { user } = renderRoute('/3')
 
     const select = screen.getByRole('combobox', { name: /select/i })
@@ -41,7 +41,7 @@ describe('<SelectForm />', () => {
     expect(select).toHaveValue('')
   })
 
-  it.skip('should allow user to submit a selected option', async () => {
+  it('should allow user to submit a selected option', async () => {
     const { user } = renderRoute('/3')
 
     const select = screen.getByRole('combobox', { name: /select/i })
@@ -58,7 +58,7 @@ describe('<SelectForm />', () => {
     expect(listItems).toEqual(['ferrari'])
   })
 
-  it.skip('should clear select upon submission', async () => {
+  it('should clear select upon submission', async () => {
     const { user } = renderRoute('/3')
 
     const select = screen.getByRole('combobox', { name: /select/i })

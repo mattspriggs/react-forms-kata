@@ -13,6 +13,11 @@ export default function SelectForm() {
       return
     }
 
+    const car = [...cars]
+    car.push(selectedCar)
+    setCars(car)
+    setSelectedCar('')
+
     console.log('Submitting:', selectedCar)
   }
 
@@ -23,6 +28,7 @@ export default function SelectForm() {
       'on input:',
       event.target.name
     )
+    setSelectedCar(event.target.value)
   }
 
   return (
@@ -30,7 +36,7 @@ export default function SelectForm() {
       <form onSubmit={handleSubmit}>
         <p>Selected car: {selectedCar}</p>
         <label htmlFor="car">Select a Car:</label>
-        <select name="car" id="car">
+        <select name="car" id="car" onChange={handleChange} value={selectedCar}>
           <option value="">--Please choose an option--</option>
           <option value="ferrari">Ferrari</option>
           <option value="aston-martin">Aston Martin</option>

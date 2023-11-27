@@ -19,8 +19,10 @@ export default function TextAndCheckboxForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
+    // const prevList = [...list]
+    // prevList.push(formState)
     setList((prevList) => [...prevList, formState])
+    setFormState(emptyPerson)
   }
 
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +35,7 @@ export default function TextAndCheckboxForm() {
       'on input:',
       event.target.name
     )
+    setFormState({ ...formState, [event.target.name]: event.target.value })
   }
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +46,7 @@ export default function TextAndCheckboxForm() {
       'on input:',
       event.target.name
     )
+    setFormState({ ...formState, isStudent: event.target.checked })
   }
 
   return (
